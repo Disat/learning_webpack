@@ -15,7 +15,12 @@ module.exports = {
       },
       {
         test: /.jpg$/,
-        use: "file-loader",
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 10 * 1024,
+          },
+        },
       },
     ],
   },
